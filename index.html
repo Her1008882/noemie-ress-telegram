@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NOEMIE PREMIUM APK</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#070b16;
+    overflow-x:hidden;
+    color:white;
+}
+
+/* Background Animation */
+body::before{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#7f5cff;
+    filter:blur(180px);
+    top:-150px;
+    left:-150px;
+    opacity:0.5;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00d4ff;
+    filter:blur(180px);
+    bottom:-150px;
+    right:-150px;
+    opacity:0.4;
+}
+
+.login-page,
+.dashboard{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+/* Glass Card */
+.glass{
+    width:100%;
+    max-width:420px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.12);
+    backdrop-filter:blur(20px);
+    border-radius:30px;
+    padding:35px;
+    box-shadow:0 0 40px rgba(0,0,0,0.5);
+    animation:fade 1s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.logo{
+    width:90px;
+    height:90px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#7f5cff,#00d4ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    margin-bottom:20px;
+    font-size:35px;
+    font-weight:700;
+    box-shadow:0 0 30px rgba(127,92,255,0.5);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:10px;
+    font-size:30px;
+}
+
+.desc{
+    text-align:center;
+    color:#bdbdbd;
+    font-size:14px;
+    margin-bottom:30px;
+}
+
+.input-box{
+    margin-bottom:18px;
+}
+
+.input-box label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    color:#d7d7d7;
+}
+
+.input-box input{
+    width:100%;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    background:rgba(255,255,255,0.08);
+    color:white;
+    font-size:15px;
+    border:1px solid transparent;
+    transition:0.3s;
+}
+
+.input-box input:focus{
+    border-color:#7f5cff;
+    box-shadow:0 0 15px rgba(127,92,255,0.4);
+}
+
+.login-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    background:linear-gradient(135deg,#7f5cff,#00d4ff);
+    color:white;
+    transition:0.3s;
+}
+
+.login-btn:hover{
+    transform:scale(1.03);
+}
+
+.error{
+    margin-top:15px;
+    text-align:center;
+    color:#ff6b6b;
+    display:none;
+}
+
+/* Dashboard */
+.dashboard{
+    display:none;
+    flex-direction:column;
+    padding:40px 20px;
+}
+
+.topbar{
+    width:100%;
+    max-width:1200px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.brand{
+    font-size:28px;
+    font-weight:700;
+    background:linear-gradient(135deg,#7f5cff,#00d4ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.logout{
+    padding:12px 20px;
+    border:none;
+    border-radius:14px;
+    background:#ff4b4b;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.grid{
+    width:100%;
+    max-width:1200px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter:blur(20px);
+    border-radius:25px;
+    padding:25px;
+    transition:0.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px rgba(0,212,255,0.2);
+}
+
+.card::before{
+    content:'';
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:rgba(127,92,255,0.25);
+    border-radius:50%;
+    top:-40px;
+    right:-40px;
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.card h2{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#c7c7c7;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.download{
+    display:inline-block;
+    padding:12px 18px;
+    border-radius:12px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(135deg,#7f5cff,#00d4ff);
+    font-size:14px;
+    font-weight:600;
+}
+
+.footer{
+    margin-top:40px;
+    color:#999;
+    font-size:13px;
+}
+
+@media(max-width:500px){
+    .glass{
+        padding:25px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div class="login-page" id="loginPage">
+
+    <div class="glass">
+
+        <div class="logo">N</div>
+
+        <h1>NOEMIE APK</h1>
+        <p class="desc">
+            Premium Apps Private Access
+        </p>
+
+        <div class="input-box">
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Masukkan username">
+        </div>
+
+        <div class="input-box">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Masukkan password">
+        </div>
+
+        <button class="login-btn" onclick="login()">
+            LOGIN SEKARANG
+        </button>
+
+        <div class="error" id="error">
+            Username atau password salah!
+        </div>
+
+    </div>
+
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+
+    <div class="topbar">
+        <div class="brand">NOEMIE PREMIUM</div>
+
+        <button class="logout" onclick="logout()">
+            Logout
+        </button>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">🎬</div>
+            <h2>Netflix Premium</h2>
+            <p>
+                Streaming tanpa iklan dengan kualitas Ultra HD.
+            </p>
+
+            <a href="#" class="download">
+                Download
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎵</div>
+            <h2>Spotify Premium</h2>
+            <p>
+                Nikmati musik tanpa batas tanpa iklan.
+            </p>
+
+            <a href="#" class="download">
+                Download
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">📺</div>
+            <h2>YouTube Premium</h2>
+            <p>
+                Tonton video bebas iklan dan background play.
+            </p>
+
+            <a href="#" class="download">
+                Download
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎮</div>
+            <h2>Game MOD APK</h2>
+            <p>
+                Kumpulan game premium unlocked terbaru.
+            </p>
+
+            <a href="#" class="download">
+                Download
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">💎</div>
+            <h2>VIP Access</h2>
+            <p>
+                Akses aplikasi private dan update terbaru.
+            </p>
+
+            <a href="#" class="download">
+                Open
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚀</div>
+            <h2>Future Update</h2>
+            <p>
+                Website ini bisa ditambah fitur admin, upload APK,
+                database login, dan sistem member.
+            </p>
+
+            <a href="#" class="download">
+                Coming Soon
+            </a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © 2026 NOEMIE PREMIUM APK — Private System
+    </div>
+
+</div>
+
+<script>
+const USERNAME = "noemie";
+const PASSWORD = "noemie100526";
+
+function login(){
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if(username === USERNAME && password === PASSWORD){
+
+        localStorage.setItem("loggedIn","true");
+
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("dashboard").style.display = "flex";
+
+    } else {
+
+        document.getElementById("error").style.display = "block";
+
+    }
+
+}
+
+function logout(){
+
+    localStorage.removeItem("loggedIn");
+
+    document.getElementById("dashboard").style.display = "none";
+    document.getElementById("loginPage").style.display = "flex";
+
+}
+
+window.onload = function(){
+
+    if(localStorage.getItem("loggedIn") === "true"){
+
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("dashboard").style.display = "flex";
+
+    }
+
+}
+</script>
+
+</body>
+</html>
